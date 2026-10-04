@@ -1,21 +1,29 @@
 :root {
   color-scheme: dark;
+  --cream: #f9efcf;
+  --olive: #45462a;
+  --ink: #27291b;
+  --muted: rgba(249, 239, 207, 0.72);
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  min-width: 320px;
   margin: 0;
-  font-family: Poppins, sans-serif;
-  background-color: #f9efcf;
+  color: var(--cream);
+  background-color: var(--olive);
   background-image: url("https://agha.studio/cdn/shop/files/fundoverde.png?v=1770146112&width=2000");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: #f9fafb;
   position: relative;
 }
 
@@ -23,92 +31,374 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.24);
-  pointer-events: none;
   z-index: 0;
+  background: rgba(24, 26, 15, 0.42);
+  pointer-events: none;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 5px;
 }
 
 .page {
+  width: min(100%, 1600px);
   min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 24px;
+  margin: 0 auto;
+  padding: 0 clamp(22px, 6vw, 96px);
   position: relative;
   z-index: 1;
 }
 
-.card {
-  width: min(460px, 100%);
-  background: #45462a;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 18px;
-  padding: 28px 20px;
+.siteHeader {
+  min-height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  border-bottom: 1px solid rgba(249, 239, 207, 0.25);
+}
+
+.wordmark {
+  flex: 0 0 auto;
+  text-decoration: none;
+  font-size: 1.18rem;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+}
+
+.wordmark span {
+  font-weight: 400;
+}
+
+.headerLinks {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+}
+
+.headerLinks a {
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.headerLinks a:hover {
+  color: var(--cream);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.gallerySection {
+  padding: clamp(36px, 5vw, 72px) 0 clamp(76px, 10vw, 144px);
+  scroll-margin-top: 24px;
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 36px;
+  margin-bottom: 42px;
+}
+
+.sectionHeading h2,
+.connectSection h2 {
+  margin: 10px 0 0;
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  font-weight: 400;
+  letter-spacing: -0.075em;
+  line-height: 1;
+}
+
+.sectionNote {
+  max-width: 300px;
+  margin: 0 0 5px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.artworkGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 42px) clamp(14px, 2vw, 28px);
+}
+
+.artwork {
+  min-width: 0;
+}
+
+.artworkImage {
+  aspect-ratio: 1;
+  overflow: hidden;
+  position: relative;
+  background: rgba(249, 239, 207, 0.14);
+}
+
+.artworkImage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.artwork:hover .artworkImage img {
+  transform: scale(1.04);
+}
+
+.artworkCta {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 14px;
+  border: 1px solid rgba(39, 41, 27, 0.15);
+  color: var(--ink);
+  background: var(--cream);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.artworkCta:hover {
+  background: #fff9e8;
+  transform: translateY(-2px);
+}
+
+.artworkCta:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 3px;
+}
+
+.artworkCaption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 12px;
+}
+
+.artworkCaption h3 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.artworkCaption h3 a {
+  text-decoration: none;
+}
+
+.artworkCaption h3 a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.artworkCaption p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-align: right;
+}
+
+.galleryLoadTrigger {
+  min-height: 72px;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.connectSection {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(42px, 7vw, 84px);
+  border: 1px solid rgba(249, 239, 207, 0.18);
+  border-radius: 4px;
+  background: rgba(50, 52, 30, 0.8);
   text-align: center;
   backdrop-filter: blur(8px);
 }
 
-@media (max-width: 640px) {
-  .page {
-    padding: 14px;
-  }
-
-  .card {
-    width: 100%;
-    max-width: none;
-    padding: 34px 24px;
-    border-radius: 20px;
-  }
-
-  .avatar {
-    width: min(260px, 85%);
-  }
+.connectSection h2 {
+  max-width: 680px;
+  margin: 18px auto 0;
+  font-size: clamp(2.25rem, 5vw, 4.4rem);
 }
 
-.avatar {
-  width: min(220px, 70%);
-  height: auto;
-  border-radius: 0;
-  object-fit: contain;
-  border: 0;
-  margin: 0 auto 10px;
-  display: block;
-}
-
-h1 {
-  margin: 12px 0 6px;
-  font-size: 1.65rem;
-}
-
-.username {
-  margin: 0;
-  color: #9ca3af;
-  font-weight: 600;
-}
-
-.bio {
-  margin: 14px auto 22px;
-  max-width: 320px;
-  line-height: 1.5;
-  color: #d1d5db;
+.connectSection > p:not(.eyebrow) {
+  margin: 18px auto 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
 }
 
 .links {
-  display: grid;
-  gap: 12px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
 }
 
 .linkButton {
-  display: block;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 11px 16px;
+  border: 1px solid rgba(249, 239, 207, 0.38);
+  border-radius: 2px;
+  color: var(--cream);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-decoration: none;
-  font-weight: 700;
-  color: #0f172a;
-  background: #f9efcf;
-  border-radius: 10px;
-  padding: 12px 14px;
-  transition: transform 0.15s ease, opacity 0.15s ease;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .linkButton:hover {
-  transform: translateY(-1px);
-  opacity: 0.92;
+  color: var(--ink);
+  background: var(--cream);
+}
+
+.siteFooter {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 55px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 900px) {
+  .artworkGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 0 20px;
+  }
+
+  .siteHeader {
+    min-height: 70px;
+  }
+
+  .headerLinks {
+    gap: 8px 14px;
+  }
+
+  .headerLinks a {
+    font-size: 0.62rem;
+  }
+
+  .headerLinks a:nth-child(1),
+  .headerLinks a:nth-child(2),
+  .headerLinks a:nth-child(3) {
+    display: none;
+  }
+
+  .sectionHeading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .sectionNote {
+    max-width: 360px;
+  }
+
+  .artworkGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px 10px;
+  }
+
+  .artworkCaption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 8px;
+  }
+
+  .artworkCaption h3 {
+    font-size: 0.78rem;
+  }
+
+  .artworkCaption p {
+    font-size: 0.62rem;
+  }
+
+  .artworkCaption p {
+    text-align: left;
+  }
+
+  .artworkCta {
+    right: 4px;
+    bottom: 4px;
+    min-height: 28px;
+    gap: 4px;
+    padding: 0 6px;
+    font-size: 0.52rem;
+    letter-spacing: 0.04em;
+  }
+
+  .connectSection {
+    padding: 40px 20px;
+  }
+
+  .links {
+    gap: 8px;
+  }
+
+  .linkButton {
+    flex: 1 1 140px;
+  }
+
+  .siteFooter {
+    min-height: 86px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

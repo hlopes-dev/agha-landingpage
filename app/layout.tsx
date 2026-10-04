@@ -8,8 +8,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Minha pagina de links",
-  description: "Pagina estilo Linktree feita com Next.js",
+  title: "Fernanda Aghá — Art & Objects",
+  description:
+    "Discover handmade fiber art, ancestral adornment, and wooden objects by artist Fernanda Aghá.",
 };
 
 export default function RootLayout({
@@ -18,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <body className={poppins.className}>{children}</body>
     </html>
   );
