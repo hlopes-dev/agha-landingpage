@@ -1,0 +1,114 @@
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  background-color: #f9efcf;
+  background-image: url("https://agha.studio/cdn/shop/files/fundoverde.png?v=1770146112&width=2000");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #f9fafb;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.24);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  width: min(460px, 100%);
+  background: #45462a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 28px 20px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 14px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: none;
+    padding: 34px 24px;
+    border-radius: 20px;
+  }
+
+  .avatar {
+    width: min(260px, 85%);
+  }
+}
+
+.avatar {
+  width: min(220px, 70%);
+  height: auto;
+  border-radius: 0;
+  object-fit: contain;
+  border: 0;
+  margin: 0 auto 10px;
+  display: block;
+}
+
+h1 {
+  margin: 12px 0 6px;
+  font-size: 1.65rem;
+}
+
+.username {
+  margin: 0;
+  color: #9ca3af;
+  font-weight: 600;
+}
+
+.bio {
+  margin: 14px auto 22px;
+  max-width: 320px;
+  line-height: 1.5;
+  color: #d1d5db;
+}
+
+.links {
+  display: grid;
+  gap: 12px;
+}
+
+.linkButton {
+  display: block;
+  text-decoration: none;
+  font-weight: 700;
+  color: #0f172a;
+  background: #f9efcf;
+  border-radius: 10px;
+  padding: 12px 14px;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.linkButton:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
