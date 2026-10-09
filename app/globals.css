@@ -226,16 +226,6 @@ a:focus-visible {
   text-align: right;
 }
 
-.galleryLoadTrigger {
-  min-height: 72px;
-  display: grid;
-  place-items: center;
-  color: var(--muted);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 .connectSection {
   max-width: 900px;
   margin: 0 auto;

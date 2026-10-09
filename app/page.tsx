@@ -20,12 +20,9 @@ export default function HomePage() {
       <section className="gallerySection" id="artworks" aria-labelledby="gallery-title">
         <div className="sectionHeading">
           <div>
-            <p className="eyebrow">A selection of original works</p>
             <h2 id="gallery-title">The art.</h2>
           </div>
-          <p className="sectionNote">
-            Fiber, adornment, and wood — each piece made by hand in the studio.
-          </p>
+          <p className="sectionNote">Pick your artwork.</p>
         </div>
 
         <ArtworkGallery artworks={artworks} />
