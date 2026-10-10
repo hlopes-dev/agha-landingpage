@@ -11,8 +11,7 @@ export type ProfileData = {
 
 export type Artwork = {
   title: string;
-  category: string;
-  price?: string;
+  price: string;
   imageUrl: string;
   url: string;
 };
@@ -30,35 +29,29 @@ export const profileData: ProfileData = {
   ],
 };
 
-export const artworkPaymentUrl = "https://agha.studio/collections/all";
-
 export const artworks: Artwork[] = [
   {
-    title: "1-12",
-    category: "artwork",
-    imageUrl:
-      "https://cdn.shopify.com/s/files/1/0920/7123/1863/files/obaluae_bienal_2025.png?v=1770551515",
-    url: artworkPaymentUrl,
+    title: "Unique tiles",
+    price: "€120",
+    imageUrl: "/artworks/unique-tiles.webp",
+    url: "https://checkout.revolut.com/pay/a1a64a9c-a833-4467-8333-b2e60b7c32a5",
+  },
+  {
+    title: "The quartet",
+    price: "€460",
+    imageUrl: "/artworks/the-quartet.webp",
+    url: "https://checkout.revolut.com/pay/0adbe8f3-8ba9-4f1b-add4-e4d2b0e80411",
   },
   {
     title: "Coral",
-    category: "fiber sculpture",
-    imageUrl:
-      "https://cdn.shopify.com/s/files/1/0920/7123/1863/files/image00015.jpg?v=1769951161",
-    url: artworkPaymentUrl,
+    price: "€2,200",
+    imageUrl: "/artworks/coral.webp",
+    url: "https://checkout.revolut.com/pay/deb6a5a8-8397-48c6-9391-c1821ba3248d",
   },
   {
-    title: "Textile Big",
-    category: "textile sculpture",
-    imageUrl:
-      "https://cdn.shopify.com/s/files/1/0920/7123/1863/files/20250430_190632.jpg?v=1766086403",
-    url: artworkPaymentUrl,
-  },
-  {
-    title: "DaVinci",
-    category: "artwork",
-    imageUrl:
-      "https://cdn.shopify.com/s/files/1/0920/7123/1863/files/1000064639.png?v=1768328855",
-    url: artworkPaymentUrl,
+    title: "Colors through texture",
+    price: "€3,600",
+    imageUrl: "/artworks/colors-through-texture.webp",
+    url: "https://checkout.revolut.com/pay/638f6902-ca8f-47cd-8bad-b4f985665fce",
   },
 ];

@@ -1,6 +1,6 @@
 # Aghá Studio — GitHub Pages
 
-Landing page estática em Next.js para a artista Fernanda Aghá. O site apresenta quatro obras em uma galeria com links para compra, além dos canais de contato e redes sociais.
+Landing page estática em Next.js para a artista Fernanda Aghá. O site apresenta quatro obras em uma galeria de uma coluna, com links de pagamento Revolut, além dos canais de contato e redes sociais.
 
 ## Como editar o conteúdo
 
@@ -8,10 +8,9 @@ Edite `data/profile.ts`:
 
 - `bio` e `avatarUrl`: apresentação e marca da artista
 - `links`: site, loja, WhatsApp, email e Instagram
-- `artworks`: as quatro obras da galeria, com título, categoria, preço opcional e imagem
-- `artworkPaymentUrl`: destino compartilhado pelos botões “Pay here” (atualmente a coleção da loja; substitua pelo link Revolut quando disponível)
+- `artworks`: as quatro obras da galeria, com título, preço, imagem e link de pagamento
 
-As imagens de “1-12”, “Textile Big” e “DaVinci” são temporárias e devem ser substituídas pelas imagens corretas quando estiverem disponíveis.
+As imagens da galeria estão em `public/artworks/`. O workflow do GitHub Actions exporta o site para a raiz do domínio personalizado.
 
 ## Rodar localmente
 
@@ -28,4 +27,4 @@ Abra `http://localhost:3000`. O build de produção pode ser validado com `npm r
 2. Em `Settings > Pages`, selecione **GitHub Actions** como source.
 3. Ao fazer push para `main`, `.github/workflows/static.yml` exporta e publica o site.
 
-As imagens da galeria são carregadas do CDN público da loja. Para alterar as obras ou adicionar o link Revolut/QR code, atualize os dados em `data/profile.ts`.
+Para alterar as obras, preços ou links de pagamento, atualize os dados em `data/profile.ts`.

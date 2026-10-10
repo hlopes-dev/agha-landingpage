@@ -1,7 +1,5 @@
 import type { Artwork } from "@/data/profile";
 
-const PRICE_PLACEHOLDER = "Price coming soon";
-
 export default function ArtworkGallery({
   artworks,
 }: {
@@ -29,7 +27,7 @@ export default function ArtworkGallery({
                 {artwork.title}
               </a>
             </h3>
-            <p>{artwork.price ?? PRICE_PLACEHOLDER}</p>
+            <p>{artwork.price}</p>
           </div>
         </article>
       ))}

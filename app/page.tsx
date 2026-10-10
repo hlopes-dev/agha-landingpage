@@ -9,11 +9,13 @@ export default function HomePage() {
           Aghá <span>Studio</span>
         </a>
         <nav className="headerLinks" aria-label="Artist links">
-          {profileData.links.map((link) => (
-            <a key={link.url} href={link.url}>
-              {link.title}
-            </a>
-          ))}
+          {profileData.links
+            .filter((link) => link.title === "email" || link.title === "instagram")
+            .map((link) => (
+              <a key={link.url} href={link.url}>
+                {link.title}
+              </a>
+            ))}
         </nav>
       </header>
 
@@ -31,7 +33,6 @@ export default function HomePage() {
       <section className="connectSection" aria-labelledby="connect-title">
         <p className="eyebrow">Stay close to the work</p>
         <h2 id="connect-title">Good things begin with a hello.</h2>
-        <p>Explore the shop, follow along, or get in touch about a custom piece.</p>
         <div className="links">
           {profileData.links
             .filter((link) => link.title !== "website")
